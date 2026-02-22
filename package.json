@@ -1,0 +1,14 @@
+{
+  "name": "pvc-aadhaar-printer",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "dependencies": {
+    "electron": "^39.2.7",
+    "fabric": "^7.1.0",
+    "jspdf": "^3.0.4",
+    "pdfjs-dist": "^5.4.530"
+  }
+}

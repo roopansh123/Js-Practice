@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>PVC Aadhaar Printer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ================= TOP BAR ================= -->
+<header class="topbar">
+  <label>PDF Path</label>
+  <input id="pdfPath" type="text" placeholder="Select Aadhaar PDF" readonly />
+  <button id="browseBtn" class="icon">📂</button>
+
+  <label>Password</label>
+  <input id="pdfPassword" type="password" placeholder="Optional" />
+
+  <button class="btn blue" disabled>Preview</button>
+</header>
+
+<!-- ================= HIDDEN FILE INPUT ================= -->
+<input id="fileInput" type="file" accept=".pdf,.png,.jpg,.jpeg" hidden />
+
+<!-- ================= MAIN ================= -->
+<div class="main">
+
+  <!-- ========== LEFT PANEL ========== -->
+  <aside class="sidebar">
+
+    <div class="section">
+      <button class="btn gray">Photo Editor</button>
+      <button class="btn gray">Settings</button>
+      <button class="btn gray">Master Setting</button>
+    </div>
+
+    <div class="section">
+      <label><input type="checkbox" /> Pre-Printed Card</label>
+      <select>
+        <option>Epson L805</option>
+      </select>
+    </div>
+
+    <div class="section">
+      <label><input type="checkbox" /> Bold</label>
+      <label><input type="checkbox" /> Only Front QR</label>
+    </div>
+
+    <!-- CARD SIDE -->
+    <div class="section">
+      <h4>Card Side</h4>
+      <label>
+        <input type="radio" name="side" value="front" checked />
+        Front
+      </label>
+      <label>
+        <input type="radio" name="side" value="back" />
+        Back
+      </label>
+    </div>
+
+    <div class="section">
+      <h4>Position Adjust</h4>
+      <div class="arrow-pad">
+        <button>▲</button>
+        <div>
+          <button>◀</button>
+          <button class="center">●</button>
+          <button>▶</button>
+        </div>
+        <button>▼</button>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ========== PREVIEW AREA ========== -->
+  <main class="preview">
+
+    <div class="canvas-wrapper">
+      <div class="tab-bar">
+        <span id="tabFront" class="active">Front</span>
+        <span id="tabBack">Back</span>
+      </div>
+      <canvas id="cardCanvas"></canvas>
+    </div>
+
+  </main>
+</div>
+
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <span>Status: Ready</span>
+  <div>
+    <button class="btn gray">Reset</button>
+    <button id="printCard" class="btn green">PRINT CARD</button>
+  </div>
+</footer>
+
+<!-- ================= LIBRARIES ================= -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<!-- ================= APP LOGIC ================= -->
+<script src="renderer.js"></script>
+
+</body>
+</html>
