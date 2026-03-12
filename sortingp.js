@@ -48,14 +48,14 @@
 
 
 
-const employees = [
-  { department: "HR", name: "Anjali", age: 32 },
-  { department: "Tech", name: "Aman", age: 28 },
-  { department: "HR", name: "Rahul", age: 25 },
-  { department: "Tech", name: "Sneha", age: 24 },
-  { department: "Finance", name: "Kunal", age: 30 },
-  { department: "Tech", name: "Divya", age: 28 },
-];
+// const employees = [
+//   { department: "HR", name: "Anjali", age: 32 },
+//   { department: "Tech", name: "Aman", age: 28 },
+//   { department: "HR", name: "Rahul", age: 25 },
+//   { department: "Tech", name: "Sneha", age: 24 },
+//   { department: "Finance", name: "Kunal", age: 30 },
+//   { department: "Tech", name: "Divya", age: 28 },
+// ];
 
 
 
@@ -125,20 +125,32 @@ const employees = [
 
 
 
-const orignal = { 
-    name : "Alice",
-    address : {city:"Pune", pin :411001},
-    hobbies : ["reading", "coding"]
-};
+// const orignal = { 
+//     name : "Alice",
+//     address : {city:"Pune", pin :411001},
+//     hobbies : ["reading", "coding"]
+// };
 
 
-const clone = {...orignal};
-clone.address.city = "Mumbai";
-clone.hobbies.push("gaming");
+// const clone = {...orignal};
+// clone.address.city = "Mumbai";
+// clone.hobbies.push("gaming");
 
 
-console.log(orignal.address.city);
-console.log(orignal.hobbies);
+// console.log(orignal.address.city);
+// console.log(orignal.hobbies);
 
 
 
+let str  = 'abcd'
+function revString(str, j=str.length-1, ans = ""){
+    if (j<0){
+        return ans
+    }
+
+    ans+=str[j];
+
+    return revString(str,j-1,ans);
+}
+
+console.log(revString(str))

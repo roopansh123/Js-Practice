@@ -253,18 +253,21 @@
 
 
 
-// Q6 frequency based sorting 
 
 
-let a= [1,2,3]
-let b = [4,5];
+
+// let a= [1,2,3]
+// let b = [4,5];
 
 
-let c = a.concat(b)
+// let c = a.concat(b)
 
-console.log(c);
+// console.log(c);
 
-c[1]=8
+// c[1]=8
 
-console.log(c);
-console.log(a)
+// console.log(c);
+// console.log(a)
+
+
+
