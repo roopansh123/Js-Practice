@@ -141,16 +141,24 @@
 // console.log(orignal.hobbies);
 
 
+//  reverse a string using recursion
 
-let str  = 'abcd'
-function revString(str, j=str.length-1, ans = ""){
-    if (j<0){
-        return ans
-    }
 
-    ans+=str[j];
+// let str  = 'abcd'
+// function revString(str, j=str.length-1, ans = ""){
+//     if (j<0){
+//         return ans
+//     }
 
-    return revString(str,j-1,ans);
-}
+//     ans+=str[j];
 
-console.log(revString(str))
+//     return revString(str,j-1,ans);
+// }
+
+// console.log(revString(str))
+
+
+// if (""){
+//     console.log ('true')
+// }
+// else console.log('false')
