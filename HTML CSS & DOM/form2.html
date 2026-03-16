@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Feedback Form</title>
+
+<style>
+
+body{
+    text-align: left;
+    font-family: Arial, sans-serif;
+}
+
+.star-rating {
+  font-size: 20px;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  color: lightgray;
+  cursor: pointer;
+}
+
+.star-rating label::before {
+  content: "★";
+}
+
+.star-rating input:checked ~ label {
+  color: gold;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: gold;
+}
+
+</style>
+</head>
+
+<body>
+
+<form>
+<fieldset>
+<legend><h1>Feedback Form</h1></legend>
+
+<label for="order_id">Order Id : </label>
+<input placeholder="Enter Your Order Id" id="order_id" name="order_id" required>
+
+<br><br>
+
+
+<label>Rating : </label>
+<div class="star-rating" style="display: inline;">
+
+<input type="radio" name="rating" id="star1">
+<label for="star1"></label>
+
+<input type="radio" name="rating" id="star2">
+<label for="star2"></label>
+
+<input type="radio" name="rating" id="star3">
+<label for="star3"></label>
+
+<input type="radio" name="rating" id="star4">
+<label for="star4"></label>
+
+<input type="radio" name="rating" id="star5">
+<label for="star5"></label>
+
+</div>
+
+<br>
+<br>
+<label for="email">Email : </label>
+<input type="email" placeholder="Enter your email" id="email">
+
+<br><br>
+
+<label>Fav Color : </label>
+<input type="color">
+
+<br><br>
+
+<label>Why would you recommend us : </label>
+<textarea></textarea>
+
+<br><br>
+
+<label>Channel : </label>
+<select>
+<option>--select channel--</option>
+<option>Amazon</option>
+<option>Website</option>
+<option>Whatsapp</option>
+</select>
+
+<br><br>
+<input type="checkbox" id="terms">
+<label for="id"><a href="">I agree terms and conditions</a></label>
+<br><br>
+<button>Submit</button>
+
+</fieldset>
+</form>
+
+</body>
+</html>
