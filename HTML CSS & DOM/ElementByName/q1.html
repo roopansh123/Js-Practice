@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Card</title>
+
+  <style>
+    body {
+      background: #f4f4f4;
+      font-family: Arial, sans-serif;
+      /* display: flex; */
+    }
+
+    .card {
+      width: 280px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .img-box {
+      height: 200px;
+      background: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px;
+    }
+
+    .img-box img {
+      max-width: 100%;
+      max-height: 100%;
+      /* object-fit: contain; */
+    }
+
+    .card-content {
+      padding: 20px;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .desc {
+      font-size: 13px;
+      color: #777;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 20px;
+      font-weight: bold;
+      color: #e4572e;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      background: #e4572e;
+      color: white;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #c9441f;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card">
+    
+    <div class="img-box">
+      <img src="https://demo.sirv.com/bag.jpg" alt="Bag">
+    </div>
+
+    <div class="card-content">
+      <div class="title">Classic Brown Bag</div>
+      <div class="desc">Lightweight and comfortable bag perfect for everyday use.</div>
+      <div class="price">₹1,299</div>
+      <button class="btn">Add to Cart</button>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -20,6 +20,6 @@ for (let ele of message){
 let msgIdx = 1
 
 for (let ele of messageTitle){
-    ele.innerText = `${msgIdx}. ${ele.innerText} `;
+    ele.innerText = `${msgIdx}. ${ele.innerText}`;
     msgIdx++;
 }
