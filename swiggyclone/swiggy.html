@@ -3,85 +3,501 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Swiggy Clone</title>
     <link rel="stylesheet" href="style.css">
-
-    <style>
-        
-    </style>
-   
-
 </head>
-<body>
-    <div class ="navbar">
-        <div class="logo">
-            <img src="logo.png">
-        </div>
-        
 
-        <div class="links">
-            <a href="#">Swiggy Corporate</a>
-            <a href="#">Partner with us</a>
-            <button class="getapp">
-                Get the App
-            </button>
-            <button class="signin">
-                Sign in
-            </button>
+<body>
+
+    <div class="nav">
+        <div class="navbar">
+
+            <div class="logo">
+                <img src="logo.png" alt="logo">
+            </div>
+
+            <div class="navlinks">
+                <a class="naone">Swiggy Corporate</a>
+                <a class="naone">Partner with us</a>
+
+                <a class="natwo">
+                    Get the app
+                    <div class="getapp">
+                        <svg width="21" height="21" viewBox="0 0 21 21" fill="none">
+                            <path d="M12.634 3.45a1 1 0 0 0-1.365 1.462l4.827 4.506c.238.221.44.41.614.577H2.996a1 1 0 0 0 0 2h13.777c-.186.18-.41.39-.677.64l-4.769 4.45a1 1 0 0 0 1.365 1.462l4.817-4.495c.546-.51 1.03-.96 1.367-1.376.365-.449.664-.979.664-1.65 0-.672-.299-1.201-.664-1.65-.338-.415-.821-.866-1.367-1.376z"
+                                fill="#FFFFFF"></path>
+                        </svg>
+                    </div>
+                </a>
+
+                <div class="nathree">
+                    <a class="threelink">Sign in</a>
+                </div>
+            </div>
 
         </div>
     </div>
 
-    <div class="hero">
-        <img  src="hero1.png">
-        <img style="align-self: end;" src="hero2.png">
+    <div class="herotop">
 
-        <div class="heading">
-            <h1> Order food & groceries. Discover<br> best restaurants. Swiggy it.!</h1>
-            <div class="input">
-                <input class="location"  placeholder="📍 Enter your delivery location">
-                <input  placeholder="Search for restaurant, items or more">
+       
+        <img class="heroimg1"
+            src="hero1.png"
+            alt="left-img">
+
+   
+        <div class="heroheading">
+            <div class="actualheading">
+                Order food & groceries. Discover best restaurants. Swiggy it!
             </div>
         </div>
-        <div class="content">
+
+
+        <div class="heroinput">
+
+            <div class="locationouter">
+
+       
+                <div class="locationinner">
+
+                    <svg width="24" height="24" viewBox="0 0 18 23" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M10.115 21.8122C12.4772 19.4062 17.7886 13.4751 17.7886 8.78883C17.7886 3.79647 13.9976 0 9.00526 0C4.0129 0 0.210938 3.79647 0.210938 8.78883C0.210938 13.4755 5.52998 19.4073 7.89476 21.8129C8.51149 22.4403 9.49871 22.44 10.115 21.8122ZM8.99988 12.7888C11.4269 12.7888 13.3943 10.8214 13.3943 8.39441C13.3943 5.96745 11.4269 4 8.99988 4C6.57292 4 4.60547 5.96745 4.60547 8.39441C4.60547 10.8214 6.57292 12.7888 8.99988 12.7888Z"
+                            fill="#FF5200">
+                        </path>
+                    </svg>
+
+      
+                    <input type="text" class="locationinput"
+                        placeholder="Enter your delivery location">
+
+        
+                    <svg class="arrowicon" width="20" height="21" viewBox="0 0 20 21" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M1.372 6.15a1.1 1.1 0 0 0-.117 1.552l7.184 8.355.03.035c.149.173.327.381.504.536.212.186.564.427 1.058.427s.847-.24 1.059-.427c.177-.155.355-.363.504-.536l.03-.035 7.12-8.282a1.1 1.1 0 0 0-1.668-1.434l-7.045 8.194-7.108-8.267a1.1 1.1 0 0 0-1.55-.117"
+                            fill="rgba(2, 6, 12, 0.92)" fill-opacity="0.92">
+                        </path>
+                    </svg>
+
+                </div>
+
+      
+                <div class="search">
+                    <input type="text" class="searchinput"
+                        placeholder="Search for restaurants, item or more">
+
+                    <svg class="searchicon" width="20" height="20" viewBox="0 0 24 24" fill="none">
+                        <circle cx="11" cy="11" r="7" stroke="#666" stroke-width="2"/>
+                        <line x1="20" y1="20" x2="16.5" y2="16.5" stroke="#666" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <img class="heroimg2" src="hero2.png">
+
+
+
+    </div>
+
+    <div class="herobottom">
+        <div class="herobottomcontent">
+            <div class="fooddelivery">
+                <a class="fooddeliverycontent" href="#">
+                    <img class="foodimg" src="fooddelivery.png">
+                </a>
+            </div>
+            <div class="fooddelivery">
+                <a class="fooddeliverycontent" href="#">
+                    <img class="foodimg" src="instamart.png">
+                </a>
+            </div>
+            <div class="fooddelivery">
+                <a class="fooddeliverycontent" href="#">
+                    <img class="foodimg" src="dineout.avif">
+                </a>
+            </div>
+        </div>
+    </div>
+
+
     
-    <div class="card">
-        <h2>FOOD DELIVERY</h2>
-        <p class="sub">FROM RESTAURANTS</p>
-        <span class="offer">UPTO 60% OFF</span>
 
-        <div class="bottom">
-            <div class="arrow">→</div>
-            <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c" alt="food">
+    <div class="bestfood">
+
+    <div class="bestfoodcontent">
+        <div class="contentinner">
+
+            <div class="contentheading">
+
+           
+                <div class="headfinal">
+                    Order our best food options
+                </div>
+
+           
+                <div class="insta-buttons">
+                    <button class="arrow-btn">&#8592;</button>
+                    <button class="arrow-btn">&#8594;</button>
+
+                </div>
+
+            </div>
+
+            <div class="bestt">
+                <div class="food-card">
+                    <button class="food-btn" >
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/North%20Indian.png">
+                    </button>
+                </div>
+                <div class="food-card">
+                    <button class="food-btn" >
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/North%20Indian.png">
+                    </button>
+                </div>
+                <div class="food-card">
+                    <button class="food-btn" >
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/North%20Indian.png">
+                    </button>
+                </div>
+                <div class="food-card">
+                    <button class="food-btn" >
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/North%20Indian.png">
+                    </button>
+                </div>
+                <div class="food-card">
+                    <button class="food-btn" >
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/North%20Indian.png">
+                    </button>
+                </div>
+                <div class="food-card">
+                    <button class="food-btn" >
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/North%20Indian.png">
+                    </button>
+                </div>
+                <div class="food-card">
+                    <button class="food-btn" >
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/North%20Indian.png">
+                    </button>
+                </div>
+                
+            </div>
+            <div class="bestt">
+                <div class="food-card">
+                    <button class="food-btn" >
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/North%20Indian.png">
+                    </button>
+                </div>
+                <div class="food-card">
+                    <button class="food-btn" >
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/North%20Indian.png">
+                    </button>
+                </div>
+                <div class="food-card">
+                    <button class="food-btn" >
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/North%20Indian.png">
+                    </button>
+                </div>
+                <div class="food-card">
+                    <button class="food-btn" >
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/North%20Indian.png">
+                    </button>
+                </div>
+                <div class="food-card">
+                    <button class="food-btn" >
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/North%20Indian.png">
+                    </button>
+                </div>
+                <div class="food-card">
+                    <button class="food-btn" >
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/North%20Indian.png">
+                    </button>
+                </div>
+                <div class="food-card">
+                    <button class="food-btn" >
+                        <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/PC_Mweb/North%20Indian.png">
+                    </button>
+                </div>
+                
+            </div>
+
+
         </div>
     </div>
 
-    <div class="card">
-        <h2>INSTAMART</h2>
-        <p class="sub">INSTANT GROCERY</p>
-        <span class="offer">UPTO 60% OFF</span>
+    </div>
 
-        <div class="bottom">
-            <div class="arrow">→</div>
-            <img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db" alt="grocery">
+
+    <div class="instamart">
+
+   
+    <div class="insta-header">
+        <h2>Shop groceries on Instamart</h2>
+
+        <div class="insta-buttons">
+            <button class="arrow-btn">&#8592;</button>
+            <button class="arrow-btn">&#8594;</button>
         </div>
     </div>
 
-    <div class="card">
-        <h2>DINEOUT</h2>
-        <p class="sub">EAT OUT & SAVE MORE</p>
-        <span class="offer">UPTO 50% OFF</span>
+    
+    <div class="insta-row">
 
-        <div class="bottom">
-            <div class="arrow">→</div>
-            <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5" alt="dining">
+        <div class="insta-card">
+            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/NI_CATALOG/IMAGES/CIW/2025/5/14/43e3c412-4ca9-4894-82ba-24b69da80aa6_06c0d2a9-804c-4bf1-8725-7ebd234e144a" />
+            <p>Fresh Vegetables</p>
         </div>
+
+        <div class="insta-card">
+            <img src="https://via.placeholder.com/120" />
+            <p>Fresh Fruits</p>
+        </div>
+
+        <div class="insta-card">
+            <img src="https://via.placeholder.com/120" />
+            <p>Dairy, Bread and Eggs</p>
+        </div>
+
+        <div class="insta-card">
+            <img src="https://via.placeholder.com/120" />
+            <p>Rice, Atta and Dals</p>
+        </div>
+
+        <div class="insta-card">
+            <img src="https://via.placeholder.com/120" />
+            <p>Masalas and Dry Fruits</p>
+        </div>
+
+        <div class="insta-card">
+            <img src="https://via.placeholder.com/120" />
+            <p>Oils and Ghee</p>
+        </div>
+
+    </div>
+
+</div>
+
+    <div class="dineout">
+
+    <!-- Header -->
+    <div class="dine-header">
+        <h2>Discover best restaurants on Dineout</h2>
+
+        <div class="dine-arrows">
+            <button>←</button>
+            <button>→</button>
+        </div>
+    </div>
+
+    <!-- Cards -->
+    <div class="dine-row">
+
+        <!-- Card -->
+        <div class="dine-card">
+            <div class="dine-img">
+                <img src="https://via.placeholder.com/400x250">
+                <div class="overlay">
+                    <h3>Subway</h3>
+                    <span>⭐ 4.2</span>
+                </div>
+            </div>
+
+            <div class="dine-info">
+                <p>Healthy Food · Fast Food</p>
+                <p>PS Magnum, Kolkata</p>
+
+                <div class="price">
+                    <span>₹400 for two</span>
+                    <span>9.8 km</span>
+                </div>
+
+                <div class="offer">Flat 20% off on pre-booking</div>
+                <div class="bank">Up to 10% off with bank offers</div>
+            </div>
+        </div>
+
+        <!-- Duplicate cards -->
+        <div class="dine-card">
+            <div class="dine-img">
+                <img src="https://via.placeholder.com/400x250">
+                <div class="overlay">
+                    <h3>Sera Bangali</h3>
+                    <span>⭐ 4.0</span>
+                </div>
+            </div>
+
+            <div class="dine-info">
+                <p>North Indian · Mughlai</p>
+                <p>Dumdum, Kolkata</p>
+
+                <div class="price">
+                    <span>₹400 for two</span>
+                    <span>0.8 km</span>
+                </div>
+
+                <div class="offer">Flat 10% off on walk-in</div>
+                <div class="bank">Up to 10% off with bank offers</div>
+            </div>
+        </div>
+        <!-- Duplicate cards -->
+        <div class="dine-card">
+            <div class="dine-img">
+                <img src="https://via.placeholder.com/400x250">
+                <div class="overlay">
+                    <h3>Sera Bangali</h3>
+                    <span>⭐ 4.0</span>
+                </div>
+            </div>
+
+            <div class="dine-info">
+                <p>North Indian · Mughlai</p>
+                <p>Dumdum, Kolkata</p>
+
+                <div class="price">
+                    <span>₹400 for two</span>
+                    <span>0.8 km</span>
+                </div>
+
+                <div class="offer">Flat 10% off on walk-in</div>
+                <div class="bank">Up to 10% off with bank offers</div>
+            </div>
+        </div>
+
     </div>
 
 </div>
 
 
+
+    <div class="banner">
+        <img src="banner.png" width="100%">
     </div>
-    
+
+    <div class="cities">
+
+    <h2>Cities with food delivery</h2>
+
+    <div class="city-grid">
+        <div class="city-card">Order food online in Bangalore</div>
+        <div class="city-card">Order food online in Gurgaon</div>
+        <div class="city-card">Order food online in Hyderabad</div>
+        <div class="city-card">Order food online in Delhi</div>
+
+        <div class="city-card">Order food online in Mumbai</div>
+        <div class="city-card">Order food online in Pune</div>
+        <div class="city-card">Order food online in Kolkata</div>
+        <div class="city-card">Order food online in Chennai</div>
+
+        <div class="city-card">Order food online in Ahmedabad</div>
+        <div class="city-card">Order food online in Chandigarh</div>
+        <div class="city-card">Order food online in Jaipur</div>
+
+        <div class="city-card show-more">Show More ⌄</div>
+    </div>
+
+    <h2 class="mt">Cities with grocery delivery</h2>
+
+    <div class="city-grid">
+        <div class="city-card">Order grocery delivery in Bangalore</div>
+        <div class="city-card">Order grocery delivery in Gurgaon</div>
+        <div class="city-card">Order grocery delivery in Hyderabad</div>
+        <div class="city-card">Order grocery delivery in Delhi</div>
+
+        <div class="city-card">Order grocery delivery in Mumbai</div>
+        <div class="city-card">Order grocery delivery in Pune</div>
+        <div class="city-card">Order grocery delivery in Kolkata</div>
+        <div class="city-card">Order grocery delivery in Chennai</div>
+
+        <div class="city-card">Order grocery delivery in Ahmedabad</div>
+        <div class="city-card">Order grocery delivery in Chandigarh</div>
+        <div class="city-card">Order grocery delivery in Jaipur</div>
+
+        <div class="city-card show-more">Show More ⌄</div>
+    </div>
+
+    </div>
+
+    <footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-col logo-col">
+            <img src="footerlogo.svg" alt="logo" class="footer-logo">
+            <p>© 2025 Swiggy Limited</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Company</h3>
+            <p>About Us</p>
+            <p>Swiggy Corporate</p>
+            <p>Careers</p>
+            <p>Team</p>
+            <p>Swiggy One</p>
+            <p>Swiggy Instamart</p>
+            <p>Swiggy Dineout</p>
+            <p>Minis</p>
+            <p>Pyng</p>
+        </div>
+
+        <div class="footer-col">
+            <h3>Contact us</h3>
+            <p>Help & Support</p>
+            <p>Partner With Us</p>
+            <p>Ride With Us</p>
+
+            <h3 class="mt">Legal</h3>
+            <p>Terms & Conditions</p>
+            <p>Cookie Policy</p>
+            <p>Privacy Policy</p>
+        </div>
+
+        <!-- Available -->
+        <div class="footer-col">
+            <h3>Available in:</h3>
+            <p>Bangalore</p>
+            <p>Gurgaon</p>
+            <p>Hyderabad</p>
+            <p>Delhi</p>
+            <p>Mumbai</p>
+            <p>Pune</p>
+
+            <button class="city-btn">685 cities ⌄</button>
+        </div>
+
+        <!-- Life -->
+        <div class="footer-col">
+            <h3>Life at Swiggy</h3>
+            <p>Explore With Swiggy</p>
+            <p>Swiggy News</p>
+            <p>Snackables</p>
+
+            <h3 class="mt">Social Links</h3>
+            <div class="socials">
+                <span>🔗</span>
+                <span>📷</span>
+                <span>📘</span>
+                <span>📌</span>
+                <span>🐦</span>
+            </div>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <div class="footer-bottom">
+        <p>For better experience, download the Swiggy app now</p>
+
+        <div class="apps">
+            <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg">
+        </div>
+    </div>
+
+    </footer>
+
 </body>
 </html>
