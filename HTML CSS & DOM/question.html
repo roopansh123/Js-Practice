@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <style>
+
+
+#openModal {
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    text-decoration: none;
+}
+
+
+.modal {
+    display: none;  /* hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background-color: rgba(0,0,0,0.5);
+}
+.modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+}
+
+.modal-content {
+    position: relative;
+   
+}
+
+.modal:target {
+    display: block;
+}
+
+.modal-content {
+    background: white;
+    width: 300px;
+    margin: 100px auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-modal {
+    text-decoration: none;
+    font-size: 20px;
+    color: black;
+}
+
+.modal-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+/* BODY */
+.modal-body {
+    margin-top: 10px;
+}
+   </style>
+</head>
+
+<body>
+
+    <a href="#modal" id="openModal">Open Modal</a>
+
+    <div id="modal" class="modal">
+
+  
+        <a href="#" class="modal-overlay"></a>
+
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2>Modal Header</h2>
+
+                <a href="#" class="close-modal">&times;</a>
+            </div>
+
+            <div class="modal-body">
+                <p>Modal Body Content</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
