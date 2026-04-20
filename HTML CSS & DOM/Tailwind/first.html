@@ -1,17 +1,35 @@
+
 <!doctype html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style type="text/tailwindcss">
+    @import "tailwindcss"; /* Only if using specific custom configurations */
+  </style>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   </head>
-  <body class="min-h-screen bg-slate-200 text-slate-800">
-    <div class="w-2xl bg-white mx-auto px-4 border border-2 border-slate-800 rounded-2xl my-10 flex-column justify-content-left align-items-center ">
-    <h1></h1>  
-      Tailwind CSS
+  <body>
+    <h1 class="text-3xl font-bold underline">
+      Hello world!
     </h1>
-    <p class="text-xl mt-5 py-3"> Tailwind CSS is a utility-first CSS framework</p>
+    <div class="bg-red-100 pt-[10px] pb-[10px] ">
+        padding eg      
+    </div>
+    <br>
+
+    <div class="bg-red-100 pt-[10px] pb-[10px]  pl-[20px] pr-[20px] ">
+        padding eg      
     </div>
 
+    <br>
+        <div class="bg-red-100 pt-[10px] pb-[10px]  pl-[10px] pr-[20px] ">
+        padding eg      
+    </div>
+
+    <div class="w-full bg-blue-300 p2">
+      <h2 class="text-4xl">width</h2>
+    </div>
+    
   </body>
 </html>
