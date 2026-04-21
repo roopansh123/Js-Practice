@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .active {
+            background-color: rebeccapurple;
+        }
+    </style>
+</head>
+<body>
+    <ul>    
+        <li class="active"> hello</li>
+        <li> Bye</li>
+    </ul>
+
+    <script>
+        let ele = document.querySelectorAll("li");
+        for(let e of ele){
+            if (e.classList.contains("active")){
+                e.classList.remove("active");
+            }
+            else{
+
+                e.setAttribute("class","active");
+            }
+
+        }
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>count</h1>
+    <h2 class="cnt">0</h2>
+    <button class="inc">+</button>
+    <button class="dec">-</button>
+    <button class="reset">reset</button>
+
+    <script>
+    let click = 0;
+
+    let cnt = document.querySelector("h2");
+
+    let inc = document.querySelector(".inc");
+    let dec = document.querySelector(".dec");
+    let reset = document.querySelector(".reset");
+    inc.addEventListener('click', () =>{
+        click ++;
+        cnt.innerText = click;
+    });
+
+    dec.addEventListener('click', () =>{
+        click --;
+        cnt.innerText = click;
+    });
+
+    reset.addEventListener('click', () =>{
+        click =0;
+        cnt.innerText = click;
+    });
+    </script>
+</body>
+</html>
