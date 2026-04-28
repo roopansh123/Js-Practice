@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h1> Add items to the list</h1>
+    <form class="form">
+        <label for="name">Name  : </label>
+        <input class="name" id="name" placeholder="Enter Your name">
+        <label for="quantity">Quantity : </label>
+        <input class="quantity" id="quantity" placeholder="Enter Quantity" type="number">
+        <label for="price">Price: </label>
+        <input class="price" id="price" placeholder="Enter price of product" type="number">
+        <button type="submit" class="submit"> Submit</button>
+    </form>
+
+    <br>
+     <form class="discount">
+        <label for="coupon">Coupon Code:</label>
+        <input class="coupon" id="coupon" placeholder="Enter coupon code">
+        <button type="submit" class="apply-coupon">Apply Coupon</button>
+    </form>
+    <br>
+
+
+    <table class="itm_lst" border="1px">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+            <tr>
+                <td></td>
+                <td>Total</td>
+                <td style="background-color: greenyellow;"></td>
+            </tr>
+        </tfoot>
+    </table>
+
+   
+
+    <script>
+        const form = document.querySelector(".form");
+        const tableBody = document.querySelector(".itm_lst tbody");
+        const discountForm = document.querySelector(".discount");
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+            const name = document.querySelector(".name").value;
+            const quantity = document.querySelector(".quantity").value;
+            const price = document.querySelector(".price").value;
+            addItems(name, quantity, price);
+            calculateTotal();
+            applyDiscount();
+           form.reset();
+        });
+
+        function addItems(name, quantity, price){
+            const row = document.createElement("tr");
+            const n = document.createElement("td");
+            n.textContent = name;
+            const q = document.createElement("td");
+            q.textContent = quantity;
+            const p = document.createElement("td");
+            p.textContent = price;
+
+            row.appendChild(n);
+            row.appendChild(q);
+            row.appendChild(p);
+            tableBody.appendChild(row);
+        }
+
+
+        function calculateTotal() {
+            const rows = tableBody.querySelectorAll("tr");
+            let total = 0;
+            rows.forEach(row => {
+                const quantity = parseFloat(row.children[1].textContent);
+                const price = parseFloat(row.children[2].textContent);
+                total += quantity * price;
+            });
+            document.querySelector("tfoot td:last-child").textContent = total.toFixed(2);
+        }
+        discountForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+            applyDiscount();
+        });
+
+        function applyDiscount() {
+            const couponCode = document.querySelector(".coupon").value;
+            const totalCell = document.querySelector("tfoot td:last-child");
+            let total = parseFloat(totalCell.textContent);
+            if (couponCode === "DIS10") {
+                total *= 0.9; 
+            } else if (couponCode === "DIS20") {
+                total *= 0.8; 
+            }
+            totalCell.textContent = total.toFixed(2);
+            discountForm.reset();
+        }
+
+        
+
+    </script>
+</body>
+</html>

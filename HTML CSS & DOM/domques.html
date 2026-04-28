@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example</title>
+</head>
+<body>
+
+<ul id="myList">
+    <li>Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+</ul>
+
+<script>
+    const items = document.querySelectorAll("#myList li");
+
+    items[0].addEventListener("mouseover", function () {
+        this.style.backgroundColor = "green";
+    });
+
+    items[0].addEventListener("mouseout", function () {
+        this.style.backgroundColor = "";
+    });
+
+    items[1].addEventListener("mouseover", function () {
+        this.style.textDecoration = "line-through";
+    });
+
+    items[1].addEventListener("mouseout", function () {
+        this.style.textDecoration = "none";
+    });
+</script>
+
+</body>
+</html>
