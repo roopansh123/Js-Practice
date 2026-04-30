@@ -3,72 +3,345 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Form Validation</title>
+   
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .form-container {
+        background: white;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        max-width: 600px;
+        width: 100%;
+      }
+
+      h2 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 30px;
+        font-size: 28px;
+      }
+
+      .form-section {
+        margin-bottom: 30px;
+        padding: 20px;
+        border: 2px solid #e0e0e0;
+        border-radius: 8px;
+        background: #f9f9f9;
+      }
+
+      .form-section legend {
+        font-size: 18px;
+        font-weight: 600;
+        color: #667eea;
+        padding: 0 10px;
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+      }
+
+      label {
+        font-weight: 600;
+        color: #333;
+        margin-bottom: 8px;
+        font-size: 14px;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="password"],
+      input[type="date"],
+      input[type="number"],
+      input[type="radio"],
+      .firstname,
+      .lastname,
+      .username {
+        padding: 12px;
+        border: 2px solid #ddd;
+        border-radius: 6px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        font-family: inherit;
+        width: 100%;
+      }
+
+      input[type="radio"] {
+        width: auto;
+      }
+
+      input[type="text"]:focus,
+      input[type="email"]:focus,
+      input[type="password"]:focus,
+      input[type="date"]:focus,
+      input[type="number"]:focus {
+        outline: none;
+        border-color: #667eea;
+        box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+      }
+
+      input:invalid:not(:placeholder-shown) {
+        border-color: #e74c3c;
+      }
+
+      .radio-group {
+        display: flex;
+        gap: 20px;
+        margin-top: 10px;
+      }
+
+      input[type="radio"] {
+        cursor: pointer;
+        accent-color: #667eea;
+      }
+
+      .radio-label {
+        font-weight: 400;
+        cursor: pointer;
+        margin-bottom: 0;
+      }
+
+      .error-message {
+        color: #e74c3c;
+        font-size: 12px;
+        margin-top: 5px;
+        display: none;
+      }
+
+      .error-message.show {
+        display: block;
+      }
+
+      input.error {
+        border-color: #e74c3c !important;
+        background-color: #fadbd8;
+      }
+
+      .form-actions {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+        justify-content: center;
+      }
+
+      button {
+        padding: 12px 30px;
+        font-size: 16px;
+        font-weight: 600;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn-submit {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+      }
+
+      .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+      }
+
+      .btn-reset {
+        background: #ecf0f1;
+        color: #333;
+      }
+
+      .btn-reset:hover {
+        background: #bdc3c7;
+      }
+
+      @media (max-width: 600px) {
+        .form-container {
+          padding: 20px;
+        }
+
+        h2 {
+          font-size: 24px;
+        }
+
+        .form-section {
+          padding: 15px;
+        }
+
+        .radio-group {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .form-actions {
+          flex-direction: column;
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+    </style>
   </head>
   <body>
-    <h2>Sign up form</h2>
-    <form>
-      <label for="firstname">First Name</label>
-      <input class="firstname" placeholder="Enter First Name" />
-      <br />
-      <br />
+    <div class="form-container">
+      <h2>Sign up form</h2>
+      <form id="signupForm" class="signup-form">
+        <fieldset class="form-section">
+          <legend>Personal Information</legend>
 
-      <label for="firstname">Last Name</label>
-      <input class="firstname" />
+          <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input
+              id="firstname"
+              class="firstname"
+              placeholder="Enter First Name"
+              required
+            />
+            <span class="error-message" id="firstname-error">Invalid First Name</span>
+          </div>
 
-      <br />
-      <br />
-      <label for="username">Username </label>
-      <input
-        class="username"
-        placeholder="Enter your username"
-        minlength="3"
-        maxlength="20"
-      />
-      <br />
-      <br />
+          <div class="form-group">
+            <label for="lastname">Last Name</label>
+            <input
+              id="lastname"
+              class="lastname"
+              placeholder="Enter Last Name"
+              required
+            />
+            <span class="error-message" id="lastname-error"></span>
+          </div>
 
-      <label for="email">Email Id: </label>
-      <input class="email" placeholder="Enter Your Email" type="email" />
-      <br />
-      <br />
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input id="dob" class="dob" type="date" required />
+            <span class="error-message" id="dob-error"></span>
+          </div>
 
-      <label for="phone">Phone Number</label>
-      <input
-        class="phone"
-        placeholder="enter your phone number"
-        type="number"
-        minlength="9"
-      />
-      <br />
-      <br />
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <div class="radio-group">
+              <label for="male" class="radio-label"
+                >Male
+                <input
+                  id="male"
+                  class="male"
+                  name="gender"
+                  type="radio"
+                  value="male"
+                  required
+              /></label>
+              <label for="female" class="radio-label"
+                >Female
+                <input
+                  id="female"
+                  class="female"
+                  name="gender"
+                  type="radio"
+                  value="female"
+                  required
+              /></label>
+            </div>
+            <span class="error-message" id="gender-error"></span>
+          </div>
+        </fieldset>
 
-      <label for="pass">Password</label>
-      <input
-        class="pass"
-        placeholder="enter password"
-        type="password"
-        minlength="8"
-        maxlength="20"
-      />
-      <br />
-      <br />
 
-      <label for="dob">DOB</label>
-      <input class="dob" type="date" />
-      <br />
-      <br />
+          <legend>Account Information</legend>
 
-      <label for="gender">Gender :</label>
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              id="username"
+              class="username"
+              placeholder="Enter your username"
+              minlength="3"
+              maxlength="20"
+              required
+            />
+            <span class="error-message" id="username-error"> invalid</span>
+          </div>
 
-      <input class="male" name="gender" type="radio" />
-      <label for="male">Male</label>
-      <input class="female" name="gender" type="radio" />
-      <label for="female">Female</label>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              class="email"
+              placeholder="Enter Your Email"
+              type="email"
+              required
+            />
+            <span class="error-message" id="email-error"></span>
+          </div>
 
-      <br />
+          <div class="form-group">
+            <label for="pass">Password</label>
+            <input
+              id="pass"
+              class="pass"
+              placeholder="enter password"
+              type="password"
+              minlength="8"
+              maxlength="20"
+              required
+            />
+            <span class="error-message" id="pass-error"></span>
+          </div>
+        </fieldset>
 
-      <button>Submit</button>
-    </form>
+        <fieldset class="form-section">
+          <legend>Contact Information</legend>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input
+              id="phone"
+              class="phone"
+              placeholder="enter your phone number"
+              type="number"
+              minlength="9"
+              required
+            />
+            <span class="error-message" id="phone-error"></span>
+          </div>
+        </fieldset>
+
+        <div class="form-actions">
+          <button type="submit" class="btn-submit">Submit</button>
+          <button type="reset" class="btn-reset">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      const signupForm = document.querySelector(".signup-form");
+
+      signupForm.addEventListener("submit", function (event) {
+        event.preventDefault();
+
+        let isValid = true;
+        const firstname = document.querySelector(".firstname").value;
+        const lastname = document.querySelector(".lastname").value;
+
+        console.log(firstname,lastname);
+       
+      });
+    </script>
   </body>
 </html>
