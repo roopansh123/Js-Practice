@@ -158,6 +158,12 @@
     <script>
 
         let container = document.querySelector('.container');
+        if (!document.querySelector('div.card')) {
+             let p = document.createElement('p');
+             p.textContent = "No team members added yet.";
+             p.style.color = "grey";
+             container.appendChild(p);
+        } 
 
 
         function addCard(){
@@ -165,6 +171,11 @@
             let role = document.getElementById('inputRole').value;
             let bio = document.getElementById('inputBio').value;
             let badgeColor = document.getElementById('inputColor').value;
+
+            let p = document.querySelector('.container p');
+            if (p) {
+                p.remove();
+            }
 
             //create a new element
             let card = document.createElement('div');
