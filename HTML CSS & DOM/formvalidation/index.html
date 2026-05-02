@@ -212,7 +212,7 @@
               id="firstname"
               class="firstname"
               placeholder="Enter First Name"
-              required
+              
             />
             <span class="error-message" id="firstname-error">Invalid First Name</span>
           </div>
@@ -339,7 +339,11 @@
         const firstname = document.querySelector(".firstname").value;
         const lastname = document.querySelector(".lastname").value;
 
-        console.log(firstname,lastname);
+
+        let fnError = document.querySelector('#firstname-error')
+        if(firstname.length ==0){
+            fnError.style.display = 'block';
+        }
        
       });
     </script>
