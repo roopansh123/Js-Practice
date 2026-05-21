@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Todo App using Event Delegation</h1>
+    <input id="task" placeholder="Enter task" />
+
+    <button id="submit">Add Task</button>
+
+    <ul id="ul"></ul>
+
+    <script>
+      const btn = document.querySelector("#submit");
+      const ul = document.querySelector("#ul");
+
+      btn.addEventListener("click", () => {
+        const input = document.querySelector("#task");
+        const taskText = input.value.trim();
+
+        const li = document.createElement("li");
+
+        const complete = document.createElement("button");
+        complete.textContent = "Complete";
+        complete.dataset.action = "complete";
+
+        const del = document.createElement("button");
+        del.textContent = "Delete";
+        del.dataset.action = "delete";
+
+        li.appendChild(document.createTextNode(taskText));
+        li.appendChild(complete);
+        li.appendChild(del);
+
+        ul.append(li);
+        input.value = "";
+      });
+
+      ul.addEventListener("click", (e) => {
+        const action = e.target.dataset.action;
+        if (!action) return;
+
+        const li = e.target.closest("li");
+        if (action === "delete") {
+          li.remove();
+        } else if (action === "complete") {
+          li.style.textDecoration = "line-through";
+        }
+      });
+    </script>
+  </body>
+</html>

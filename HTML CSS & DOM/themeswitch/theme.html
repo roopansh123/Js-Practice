@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Switch</title>
+
+    <style>
+      body {
+        transition: 0.3s;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      .themeSwitch {
+        display: none;
+      }
+
+      .toggle-label {
+        width: 70px;
+        height: 35px;
+        background-color: #ccc;
+        border-radius: 50px;
+        position: relative;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+
+      .toggle-label::before {
+        content: "";
+        width: 28px;
+        height: 28px;
+        background-color: white;
+        border-radius: 50%;
+        position: absolute;
+        top: 3.5px;
+        left: 4px;
+        transition: 0.3s;
+      }
+
+      .themeSwitch:checked + .toggle-label {
+        background-color: #222;
+      }
+
+      .themeSwitch:checked + .toggle-label::before {
+        transform: translateX(34px);
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1 class="name">Roopansh</h1>
+
+    <input class="themeSwitch" id="switch" type="checkbox" />
+    <label for="switch" class="toggle-label"></label>
+
+    <script>
+      const bdy = document.querySelector("body");
+      let btn = document.querySelector(".themeSwitch");
+
+      if (localStorage.getItem("theme") == "dark") {
+        bdy.style.backgroundColor = "black";
+        bdy.style.color = "white";
+        btn.checked = true;
+      } else {
+        bdy.style.backgroundColor = "white";
+        bdy.style.color = "black";
+      }
+
+      btn.addEventListener("change", () => {
+        if (btn.checked) {
+          localStorage.setItem("theme", "dark");
+
+          bdy.style.backgroundColor = "black";
+          bdy.style.color = "white";
+        } else {
+          localStorage.setItem("theme", "light");
+
+          bdy.style.backgroundColor = "white";
+          bdy.style.color = "black";
+        }
+      });
+    </script>
+  </body>
+</html>
