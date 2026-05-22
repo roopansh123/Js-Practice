@@ -1,0 +1,97 @@
+<h2>TODO Application</h2>
+
+<form id="todoForm">
+  <input type="text" id="taskInput" placeholder="Add Task" required />
+  <button type="submit" id="submitBtn">Add Task</button>
+</form>
+
+<ol id="taskList"></ol>
+
+<script>
+  class TodoApp {
+    constructor() {
+      this.tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+      this.editIndex = null;
+
+      this.form = document.getElementById("todoForm");
+      this.input = document.getElementById("taskInput");
+      this.list = document.getElementById("taskList");
+      this.button = document.getElementById("submitBtn");
+
+      this.render();
+
+      this.form.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const task = this.input.value.trim();
+
+        if (!task) return;
+
+        if (this.editIndex === null) {
+          this.addTask(task);
+        } else {
+          this.updateTask(task);
+        }
+      });
+    }
+
+    saveTasks() {
+      localStorage.setItem("tasks", JSON.stringify(this.tasks));
+    }
+
+    addTask(task) {
+      this.tasks.push(task);
+      this.saveTasks();
+      this.render();
+      this.input.value = "";
+    }
+
+    deleteTask(index) {
+      this.tasks.splice(index, 1);
+      this.saveTasks();
+      this.render();
+    }
+
+    editTask(index) {
+      this.input.value = this.tasks[index];
+      this.editIndex = index;
+      this.button.textContent = "Update Task";
+    }
+
+    updateTask(task) {
+      this.tasks[this.editIndex] = task;
+      this.editIndex = null;
+      this.button.textContent = "Add Task";
+      this.input.value = "";
+
+      this.saveTasks();
+      this.render();
+    }
+
+    render() {
+      this.list.innerHTML = "";
+
+      this.tasks.forEach((task, index) => {
+        const li = document.createElement("li");
+
+        const text = document.createTextNode(task + " ");
+
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
+        editBtn.addEventListener("click", () => this.editTask(index));
+
+        const deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.addEventListener("click", () => this.deleteTask(index));
+
+        li.appendChild(text);
+        li.appendChild(editBtn);
+        li.appendChild(deleteBtn);
+
+        this.list.appendChild(li);
+      });
+    }
+  }
+
+  new TodoApp();
+</script>
