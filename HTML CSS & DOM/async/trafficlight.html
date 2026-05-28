@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        width: 200px;
+        height: 300px;
+        display: flex;
+        padding: 2px;
+        gap: 2px;
+        flex-direction: column;
+        background-color: gray;
+        border-radius: 15px;
+        justify-content: center;
+        align-items: center;
+      }
+      .red,
+      .yellow,
+      .green {
+        background-color: white;
+        border-radius: 50%;
+        gap: 20px;
+        height: 100px;
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="red"></div>
+
+      <div class="yellow"></div>
+
+      <div class="green"></div>
+    </div>
+
+    <div>
+      <button class="start">Start</button>
+      <button class="stop">Stop</button>
+    </div>
+
+    <script>
+      const start = document.querySelector(".start");
+      const stop = document.querySelector(".stop");
+      let red = document.querySelector(".red");
+      let yellow = document.querySelector(".yellow");
+      let green = document.querySelector(".green");
+
+      function change() {
+        red.style.backgroundColor = "red";
+      }
+      function changey() {
+        clearInterval(id);
+        red.style.backgroundColor = "white";
+        yellow.style.backgroundColor = "yellow";
+      }
+      function changeg() {
+        clearInterval(id);
+        clearInterval(id1);
+        red.style.backgroundColor = "white";
+        yellow.style.backgroundColor = "white";
+        green.style.backgroundColor = "green";
+      }
+
+      start.addEventListener("click", () => {
+        id = setInterval(change, 0);
+        id1 = setInterval(changey, 3000);
+        id2 = setInterval(changeg, 6000);
+        
+      });
+
+      
+    </script>
+  </body>
+</html>

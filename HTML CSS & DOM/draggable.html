@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag Tasks Between Columns</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      body {
+        background: #f2f2f2;
+        padding: 30px;
+      }
+
+      h1 {
+        font-size: 50px;
+        margin-bottom: 25px;
+      }
+
+      .parent {
+        display: flex;
+        gap: 25px;
+      }
+
+      .column {
+        flex: 1;
+        background: white;
+        border-radius: 20px;
+        padding: 20px;
+        min-height: 450px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      .column h2 {
+        margin-bottom: 20px;
+        font-size: 32px;
+      }
+
+      .task {
+        background: #cde8f0;
+        padding: 15px;
+        margin-bottom: 12px;
+        border-radius: 8px;
+        cursor: grab;
+        user-select: none;
+      }
+
+      .task.dragging {
+        opacity: 0.5;
+      }
+
+      .column.drag-over {
+        background: #eef9ff;
+        border: 2px dashed #7ab8d0;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Drag Tasks between Columns</h1>
+
+    <div class="parent">
+      <div class="column">
+        <h2>To-do</h2>
+
+        <div class="task" draggable="true">Task 1</div>
+        <div class="task" draggable="true">Task 2</div>
+      </div>
+
+      <div class="column">
+        <h2>In-progress</h2>
+
+        <div class="task" draggable="true">Task 3</div>
+      </div>
+
+      <div class="column">
+        <h2>Done</h2>
+      </div>
+    </div>
+
+    <script>
+      const tasks = document.querySelectorAll(".task");
+      const columns = document.querySelectorAll(".column");
+
+      let draggedTask = null;
+
+      tasks.forEach((task) => {
+        task.addEventListener("dragstart", () => {
+          draggedTask = task;
+          task.classList.add("dragging");
+        });
+
+        task.addEventListener("dragend", () => {
+          task.classList.remove("dragging");
+        });
+      });
+
+      columns.forEach((column) => {
+        column.addEventListener("dragover", (e) => {
+          e.preventDefault();
+        });
+
+        column.addEventListener("dragenter", () => {
+          column.classList.add("drag-over");
+        });
+
+        column.addEventListener("dragleave", () => {
+          column.classList.remove("drag-over");
+        });
+
+        column.addEventListener("drop", () => {
+          column.appendChild(draggedTask);
+          column.classList.remove("drag-over");
+        });
+      });
+    </script>
+  </body>
+</html>
