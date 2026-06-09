@@ -1,116 +1,132 @@
-// // function greet(name,callback){
-// //     console.log(`hello ${name}`);
-// //     callback();
-// // }
+// // // function greet(name,callback){
+// // //     console.log(`hello ${name}`);
+// // //     callback();
+// // // }
 
-// // function greetingLine(){
-// //     console.log("Hello to meet you")
-// // }
+// // // function greetingLine(){
+// // //     console.log("Hello to meet you")
+// // // }
 
-// // greet('roopansh',greetingLine);
+// // // greet('roopansh',greetingLine);
 
-// // function fetchData() {
-// //   return new Promise(function (resolve, reject) {
-// //     console.log("fetching Data from derver");
-// //     setTimeout(function () {
-// //       resolve("data come from server");
-// //     }, 1000);
-// //   });
-// // }
+// // // function fetchData() {
+// // //   return new Promise(function (resolve, reject) {
+// // //     console.log("fetching Data from derver");
+// // //     setTimeout(function () {
+// // //       resolve("data come from server");
+// // //     }, 1000);
+// // //   });
+// // // }
 
-// // console.log(fetchData());
+// // // console.log(fetchData());
 
-// // fetchData().then(function (data) {
-// //   console.log("Received", data);
-// // });
-
-// // callback
-// // function calculate(a, b, callback) {
-// //   const sum = a + b;
-// //   callback(sum);
-// // }
-
-// // calculate(2, 3, function (sum) {
-// //   console.log("Sum is", sum);
+// // // fetchData().then(function (data) {
+// // //   console.log("Received", data);
 // // // });
 
-// // function calculate(a, b) {
-// //   return new Promise(function (resolve, reject) {
-// //     resolve(`Sum is ${a + b}`);
-// //   });
-// // }
+// // // callback
+// // // function calculate(a, b, callback) {
+// // //   const sum = a + b;
+// // //   callback(sum);
+// // // }
 
-// // console.log(calculate(2, 3));
+// // // calculate(2, 3, function (sum) {
+// // //   console.log("Sum is", sum);
+// // // // });
 
-// console.log("Start");
+// // // function calculate(a, b) {
+// // //   return new Promise(function (resolve, reject) {
+// // //     resolve(`Sum is ${a + b}`);
+// // //   });
+// // // }
 
-// const promise = new Promise((resolve) => {
-//   console.log("Promise started");
-//   resolve("Resolved");
-// });
+// // // console.log(calculate(2, 3));
 
-// promise.then((result) => {
-//   console.log(result);
-// });
+// // console.log("Start");
 
-// console.log("End");
-function getUser(userId) {
-    return new Promise(function(resolve, reject) {
-        // Fetch user
-        resolve({ id: 101, name: "John" });
-    });
-}
+// // const promise = new Promise((resolve) => {
+// //   console.log("Promise started");
+// //   resolve("Resolved");
+// // });
 
-function getOrders(userId) {
-    return new Promise(function(resolve, reject) {
-        // Fetch orders
-        resolve([{ id: 201 }, { id: 202 }]);
-    });
-}
+// // promise.then((result) => {
+// //   console.log(result);
+// // });
 
-function getOrderDetails(orderId) {
-    return new Promise(function(resolve, reject) {
-        // Fetch order details
-        resolve({ shipmentId: 301 });
-    });
-}
+// // console.log("End");
+// function getUser(userId) {
+//   return new Promise(function (resolve, reject) {
+//     // Fetch user
+//     resolve({ id: 101, name: "John" });
+//   });
+// }
 
-function getShipment(shipmentId) {
-    return new Promise(function(resolve, reject) {
-        // Fetch shipment details
-        resolve({
-            id: shipmentId,
-            status: "Delivered"
-        });
-    });
-}
+// function getOrders(userId) {
+//   return new Promise(function (resolve, reject) {
+//     // Fetch orders
+//     resolve([{ id: 201 }, { id: 202 }]);
+//   });
+// }
 
-function handleError(error) {
-    console.log("Error:", error);
-}
-getUser(userId)
-  .then(function (user) {
-    getOrders(user.id);
-  })
-  .then(function (orders) {
-    getOrderDetails(orders[0].id);
-  })
-  .then(function (details) {
-    getShipment(details.shipmentId);
-  })
-  .then(function (shipment) {
-    console.log(shipment);
-  })
-  .catch(function (error) {
-    handleError(error);
-  });
+// function getOrderDetails(orderId) {
+//   return new Promise(function (resolve, reject) {
+//     // Fetch order details
+//     resolve({ shipmentId: 301 });
+//   });
+// }
 
+// function getShipment(shipmentId) {
+//   return new Promise(function (resolve, reject) {
+//     // Fetch shipment details
+//     resolve({
+//       id: shipmentId,
+//       status: "Delivered",
+//     });
+//   });
+// }
 
-  mobileInput()
-  .then(connectionSpeed)
-  .then(webcamAccess)
-  .then(shareScreen)
-  .then(testStarted)
-  .catch((error) => {
-    console.lor(error);
+// function handleError(error) {
+//   console.log("Error:", error);
+// }
+// getUser(userId)
+//   .then(function (user) {
+//     getOrders(user.id);
+//   })
+//   .then(function (orders) {
+//     getOrderDetails(orders[0].id);
+//   })
+//   .then(function (details) {
+//     getShipment(details.shipmentId);
+//   })
+//   .then(function (shipment) {
+//     console.log(shipment);
+//   })
+//   .catch(function (error) {
+//     handleError(error);
+//   });
+
+//   mobileInput()
+//   .then(connectionSpeed)
+//   .then(webcamAccess)
+//   .then(shareScreen)
+//   .then(testStarted)
+//   .catch((error) => {
+//     console.lor(error);
+//   });
+
+// async function data() {
+
+//     const a = await fetch("a");
+
+//     const b = await fetch(`b?x=${a.id}`);
+
+//     const c = await fetch(`c?y=${b.id}`);
+
+//     console.log(c);
+
+// }
+let quote = fetch("https://dogapi.dog/api/v1/facts")
+  .then((response) => response.json())
+  .then((data) => {
+    console.log(data.facts);
   });

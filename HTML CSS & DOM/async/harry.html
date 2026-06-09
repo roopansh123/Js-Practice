@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>All books</h1>
+    <div id="books"></div>
+    <button id="btn">Load books</button>
+  </body>
+
+  <script>
+    async function getdata() {
+      const data = await fetch(
+        "https://potterapi-fedeperin.vercel.app/en/books",
+      );
+      const books = await data.json();
+      return books;
+    }
+
+    function showdata(data) {
+      document.getElementById("books").innerHTML = data.map(
+        (book) => `
+        <div class="book-card">
+          <img src="${book.cover}" >
+          <p>${book.description}</p>
+          <h2>${book.title}</h2>
+          <p>${book.pages} Pages</p>
+          <p>${book.releaseDate}</p>
+        </div>
+      `,
+      );
+    }
+
+    const btn = document.getElementById("btn");
+    btn.addEventListener("click", async () => {
+      const data = await getdata();
+      showdata(data);
+    });
+  </script>
+</html>
