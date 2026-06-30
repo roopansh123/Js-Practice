@@ -16,7 +16,7 @@ const UseEffectComponent = () => {
   return (
     <div>
       UseEffectComponent <br />
-      <p>{Date.now()}</p>
+      {/* <p>{Date.now()}</p> */}
     </div>
   );
 };
