@@ -5,18 +5,12 @@ const Books = ({ data }) => {
     <div className="books-container">
       {data.map((book) => (
         <div className="book-card" key={book.number}>
-          <img
-            src={book.cover}
-            alt={book.title}
-            className="book-image"
-          />
+          <img src={book.cover} alt={book.title} className="book-image" />
 
           <div className="book-content">
             <h1 className="book-title">{book.title}</h1>
 
-            <p className="book-description">
-              {book.description}
-            </p>
+            <p className="book-description">{book.description}</p>
 
             <div className="book-details">
               <p>
