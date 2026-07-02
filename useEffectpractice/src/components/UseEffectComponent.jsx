@@ -10,13 +10,13 @@ const UseEffectComponent = () => {
       console.log(Date.now());
       return response.data;
     };
-    fetchData();
+    console.og(fetchData());
   }, []);
 
   return (
     <div>
       UseEffectComponent <br />
-      {/* <p>{Date.now()}</p> */}
+      <p>{Date.now()}</p>
     </div>
   );
 };
