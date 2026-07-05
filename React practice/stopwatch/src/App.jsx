@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 const App = () => {
   const [miliseconds, update] = useState(0);
   const [seconds, secupdate] = useState(0);
@@ -8,7 +7,6 @@ const App = () => {
 
   function start() {
     if (id !== null) return;
-
     const intervalId = setInterval(() => {
       update((prev) => {
         if (prev === 9) {
@@ -54,5 +52,4 @@ const App = () => {
     </div>
   );
 };
-
 export default App;
