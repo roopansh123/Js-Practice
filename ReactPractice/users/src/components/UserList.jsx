@@ -11,15 +11,15 @@ const UserList = () => {
 
   useEffect(() => {
     async function getUsers() {
-      let response = await axios.get("https://dummyjson.com/users");
+      let response = await axios.get("https://dummyjson.com/users/?limit=40");
       setUsers(response.data.users);
+      console.log(response);
       console.log(response.data.users);
     }
     getUsers();
   }, []);
 
   //   console.log(gender);
- 
 
   let filteredUsers = users;
 
