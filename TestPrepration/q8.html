@@ -11,9 +11,13 @@
 
     <script>
       let ta = document.querySelector("textarea");
-      let count = ta.innerText.length;
 
       let cv = document.querySelector("span");
+
+      ta.addEventListener("input", () => {
+        let count = ta.value.length;
+        cv.innerText = count;
+      });
 
       cv.innerText = count;
     </script>
