@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title">Welcome</h1>
+
+    <button id="btn">Change Color</button>
+    <br />
+    <br />
+    <input type="text" id="username" />
+    <button id="btn2">Show</button>
+    <p id="output"></p>
+
+    <p id="message">Hello World</p>
+    <button id="btn3">Toggle</button>
+
+    <ul id="list">
+      <li>Apple</li>
+    </ul>
+    <button id="btn4">Add Fruit</button>
+
+    <div class="card">
+      <h2>JavaScript</h2>
+      <button id="btn5">Delete</button>
+    </div>
+
+    <script>
+      // q1
+      let t = document.querySelector("#title");
+
+      t.textContent = "Welcome to JavaScript DOM";
+      //q2
+      let btn = document.getElementById("btn");
+      let body = document.querySelector("body");
+      btn.addEventListener("click", (e) => {
+        body.style.backgroundColor = "lightblue";
+      });
+
+      //q3
+      let btn2 = document.querySelector("#btn2");
+      let input = document.querySelector("#username");
+      let bdy = document.querySelector("body");
+      btn2.addEventListener("click", () => {
+        let p = document.createElement("p");
+        p.innerText = input.value;
+        body.appendChild(p);
+      });
+
+      //q4
+      let btn3 = document.getElementById("btn3");
+      let p = document.getElementById("message");
+
+      btn3.addEventListener("click", () => {
+        if (p.style.display != "none") {
+          p.style.display = "none";
+        } else {
+          p.style.display = "block";
+        }
+      });
+
+      //   q5
+
+      let li = document.getElementById("list");
+      let btn4 = document.getElementById("btn4");
+
+      btn4.addEventListener("click", () => {
+        let p = document.createElement("li");
+        p.innerText = "banana";
+        li.appendChild(p);
+      });
+
+      //   q6
+
+      let btn5 = document.getElementById("btn5");
+
+      btn5.addEventListener("click", () => {
+        btn5.parentElement.remove();
+      });
+
+    
+
+
+    </script>
+  </body>
+</html>

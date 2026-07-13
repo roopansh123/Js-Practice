@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <textarea></textarea>
+    <p>Characters:<span>0</span></p>
+
+    <script>
+      let ta = document.querySelector("textarea");
+      let count = ta.innerText.length;
+
+      let cv = document.querySelector("span");
+
+      cv.innerText = count;
+    </script>
+  </body>
+</html>
