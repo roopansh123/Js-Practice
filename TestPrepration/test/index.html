@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <!-- <button id="btn">Change color</button> -->
+
+    <script>
+      //   let btn = document.getElementById("btn");
+      //   let body = document.querySelector("body");
+
+      //   function randomcolor() {
+      //     return Math.round(Math.random() * 255);
+      //   }
+
+      //   console.log(randomcolor());
+
+      //   btn.addEventListener("click", () => {
+      //     body.style.backgroundColor = `rgb(${randomcolor()},${randomcolor()},${randomcolor()})`;
+      //   });
+
+      let body = document.querySelector("body");
+
+      async function getData() {
+        let response = await axios.get("https://dummyjson.com/users");
+
+        console.log(response.data.users);
+
+        return response.data.users;
+      }
+
+      getData().then((v) => {
+        v.map((i) => {
+          let h = document.createElement("h1");
+          h.innerText = "Name :  " + i.firstName + i.lastName;
+
+          let age = document.createElement("h1");
+          age.innerText = "age : " + i.age;
+
+          body.appendChild(h);
+          body.appendChild(age);
+        });
+      });
+    </script>
+  </body>
+</html>
